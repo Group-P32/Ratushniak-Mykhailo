@@ -1,0 +1,28 @@
+﻿@model IEnumerable<JewelryStore.Models.Category>
+@{
+    ViewBag.Title = "Категорії прикрас";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Категорії прикрас</h3>
+<p>@Html.ActionLink("Додати категорію", "Create")</p>
+
+<table>
+    <tr class="header">
+        <td>Назва</td>
+        <td>Опис</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Деталі", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Видалити", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

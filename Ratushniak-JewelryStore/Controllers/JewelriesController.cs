@@ -17,7 +17,8 @@ namespace Ratushniak_JewelryStore.Controllers
         // GET: Jewelries
         public ActionResult Index()
         {
-            return View(db.Jewelries.ToList());
+            var jewelries = db.Jewelries.Include(j => j.Category);
+            return View(jewelries.ToList());
         }
 
         // GET: Jewelries/Details/5

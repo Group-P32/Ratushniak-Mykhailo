@@ -6,5 +6,6 @@ namespace JewelryStore.Models
     {
         public DbSet<Jewelry> Jewelries { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

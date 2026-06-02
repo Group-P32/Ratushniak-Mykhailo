@@ -1,0 +1,31 @@
+﻿@model JewelryStore.Models.Category
+@{
+    ViewBag.Title = "Видалення категорії";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Видалення категорії</h3>
+<p>Ви впевнені, що хочете видалити цю категорію?</p>
+
+<table>
+    <tr class="header">
+        <td>Поле</td>
+        <td>Значення</td>
+    </tr>
+    <tr>
+        <td>Назва</td>
+        <td>@Html.DisplayFor(m => m.Name)</td>
+    </tr>
+    <tr>
+        <td>Опис</td>
+        <td>@Html.DisplayFor(m => m.Description)</td>
+    </tr>
+</table>
+
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input type="submit" value="Видалити" style="background-color:#8b0000; color:white; padding:8px 20px; border:none; cursor:pointer;" />
+}
+<p>@Html.ActionLink("← Скасувати і повернутись", "Index")</p>

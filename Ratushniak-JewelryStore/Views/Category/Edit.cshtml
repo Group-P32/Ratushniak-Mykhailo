@@ -1,0 +1,25 @@
+﻿@model JewelryStore.Models.Category
+@{
+    ViewBag.Title = "Редагувати категорію";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Редагувати категорію</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.Name, "Назва")
+            <br />@Html.EditorFor(m => m.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Description, "Опис")
+            <br />@Html.EditorFor(m => m.Description)
+        </p>
+        <p><input type="submit" value="Зберегти зміни" /></p>
+    </fieldset>
+}
+<p>@Html.ActionLink("← Повернутись до списку", "Index")</p>

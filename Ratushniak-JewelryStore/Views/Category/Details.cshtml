@@ -1,0 +1,48 @@
+﻿@model JewelryStore.Models.Category
+@{
+    ViewBag.Title = "Деталі категорії";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Деталі категорії</h3>
+
+<table>
+    <tr class="header">
+        <td>Поле</td>
+        <td>Значення</td>
+    </tr>
+    <tr>
+        <td>Назва</td>
+        <td>@Html.DisplayFor(m => m.Name)</td>
+    </tr>
+    <tr>
+        <td>Опис</td>
+        <td>@Html.DisplayFor(m => m.Description)</td>
+    </tr>
+</table>
+
+<h4 style="color:#c0c0c0; margin-top:20px;">Прикраси у цій категорії:</h4>
+<table>
+    <tr class="header">
+        <td>Назва</td>
+        <td>Матеріал</td>
+        <td>Ціна (грн)</td>
+    </tr>
+    @if (Model.Jewelries != null)
+    {
+        foreach (var j in Model.Jewelries)
+        {
+            <tr>
+                <td>@j.Name</td>
+                <td>@j.Material</td>
+                <td>@j.Price</td>
+            </tr>
+        }
+    }
+</table>
+
+<br />
+<p>
+    @Html.ActionLink("Редагувати", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("← Повернутись до списку", "Index")
+</p>
