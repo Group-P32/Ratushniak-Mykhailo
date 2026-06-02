@@ -1,0 +1,40 @@
+﻿@model JewelryStore.Models.Jewelry
+@{
+    ViewBag.Title = "Деталі прикраси";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Деталі прикраси</h3>
+
+<table>
+    <tr class="header">
+        <td>Поле</td>
+        <td>Значення</td>
+    </tr>
+    <tr>
+        <td>Назва</td>
+        <td>@Html.DisplayFor(m => m.Name)</td>
+    </tr>
+    <tr>
+        <td>Тип</td>
+        <td>@Html.DisplayFor(m => m.Type)</td>
+    </tr>
+    <tr>
+        <td>Матеріал</td>
+        <td>@Html.DisplayFor(m => m.Material)</td>
+    </tr>
+    <tr>
+        <td>Вага (г)</td>
+        <td>@Html.DisplayFor(m => m.Weight)</td>
+    </tr>
+    <tr>
+        <td>Ціна (грн)</td>
+        <td>@Html.DisplayFor(m => m.Price)</td>
+    </tr>
+</table>
+
+<br />
+<p>
+    @Html.ActionLink("Редагувати", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("← Повернутись до списку", "Index")
+</p>
