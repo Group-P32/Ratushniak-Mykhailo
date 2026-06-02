@@ -1,0 +1,139 @@
+﻿/* ===== СРІБНА ПІДКОВА — темна срібна тема ===== */
+
+body {
+    font-size: 14px;
+    font-family: Verdana, Arial, Helvetica, Sans-Serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    display: block;
+    background-color: #16213e;
+    padding: 12px 30px;
+    border-bottom: 2px solid #c0c0c0;
+    margin-bottom: 30px;
+}
+
+    nav ul.menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        nav ul.menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+            nav ul.menu li a {
+                color: #c0c0c0;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+
+                nav ul.menu li a:hover {
+                    color: #ffffff;
+                    text-decoration: underline;
+                }
+
+/* ===== ЗАГОЛОВОК МАГАЗИНУ ===== */
+.shop-title {
+    color: #c0c0c0;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 0 30px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ===== ОСНОВНИЙ КОНТЕНТ ===== */
+.content-wrapper {
+    padding: 0 30px 30px 30px;
+}
+
+/* ===== ТАБЛИЦЯ ===== */
+table {
+    vertical-align: middle;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #16213e;
+    border: 1px solid #c0c0c0;
+}
+
+    table tr:hover {
+        background-color: #0f3460;
+    }
+
+.header td, thead td {
+    background-color: #0f3460;
+    color: #c0c0c0;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #2a2a4a;
+    color: #e0e0e0;
+}
+
+/* ===== ПОСИЛАННЯ ===== */
+a {
+    color: #c0c0c0;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+/* ===== ФОРМА ===== */
+h3 {
+    color: #c0c0c0;
+    letter-spacing: 1px;
+}
+
+input[type="text"] {
+    width: 220px;
+    background-color: #0f3460;
+    border: 1px solid #c0c0c0;
+    color: #e0e0e0;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+input[type="submit"] {
+    width: auto;
+    background-color: #c0c0c0;
+    color: #1a1a2e;
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+    input[type="submit"]:hover {
+        background-color: #ffffff;
+    }
+
+/* ===== ПОВІДОМЛЕННЯ ===== */
+.success-msg {
+    color: #c0c0c0;
+    font-size: 18px;
+    padding: 30px;
+}
