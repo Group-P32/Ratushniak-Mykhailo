@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Срібна підкова - Каталог прикрас</title>
+</head>
+<body>
+    <div>
+        <h3>Ювелірний магазин «Срібна підкова» - Каталог прикрас</h3>
+        <table border="1" cellpadding="6">
+            <tr>
+                <td><p><b>Назва</b></p></td>
+                <td><p><b>Тип</b></p></td>
+                <td><p><b>Матеріал</b></p></td>
+                <td><p><b>Вага (г)</b></p></td>
+                <td><p><b>Ціна (грн)</b></p></td>
+                <td></td>
+            </tr>
+            @foreach (var j in ViewBag.Jewelries)
+            {
+                <tr>
+                    <td><p>@j.Name</p></td>
+                    <td><p>@j.Type</p></td>
+                    <td><p>@j.Material</p></td>
+                    <td><p>@j.Weight</p></td>
+                    <td><p>@j.Price</p></td>
+                    <td><p><a href="/Home/Buy/@j.Id">Оформити покупку</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

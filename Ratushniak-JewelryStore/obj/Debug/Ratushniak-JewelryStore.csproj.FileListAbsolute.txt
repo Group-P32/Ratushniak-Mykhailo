@@ -1,8 +1,3 @@
-C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Kuzmich-JewelryStore.dll
-C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Kuzmich-JewelryStore.pdb
-C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Kuzmich-JewelryStore.dll.config
-C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Kuzmich-JewelryStore.dll
-C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Kuzmich-JewelryStore.pdb
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\roslyn\csc.exe
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\roslyn\csc.exe.config
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\roslyn\csc.rsp
@@ -71,3 +66,8 @@ C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Microso
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak-JewelryStore.csprojAssemblyReference.cache
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak-JewelryStore.csproj.CoreCompileInputs.cache
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak-JewelryStore.csproj.CopyComplete
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Ratushniak-JewelryStore.dll.config
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Ratushniak-JewelryStore.dll
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Ratushniak-JewelryStore.pdb
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak-JewelryStore.dll
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak-JewelryStore.pdb
