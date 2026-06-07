@@ -1,0 +1,36 @@
+﻿@model JewelryStore.Models.RegisterModel
+@{
+    ViewBag.Title = "Реєстрація";
+}
+
+<h2>Реєстрація</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+
+    <div class="auth-form">
+        <div class="auth-field">
+            <label>Email</label>
+            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "filter-input" } })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div class="auth-field">
+            <label>Рік народження</label>
+            @Html.EditorFor(m => m.Year, new { htmlAttributes = new { @class = "filter-input" } })
+            @Html.ValidationMessageFor(m => m.Year)
+        </div>
+        <div class="auth-field">
+            <label>Пароль</label>
+            @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "filter-input" } })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div class="auth-field">
+            <label>Повторіть пароль</label>
+            @Html.EditorFor(m => m.PasswordConfirm, new { htmlAttributes = new { @class = "filter-input" } })
+            @Html.ValidationMessageFor(m => m.PasswordConfirm)
+        </div>
+        <button type="submit" class="btn-filter">Зареєструватися</button>
+    </div>
+}

@@ -1,0 +1,28 @@
+﻿@model JewelryStore.Models.LoginModel
+@{
+    ViewBag.Title = "Вхід";
+}
+
+<h2>Авторизація</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+
+    <div class="auth-form">
+        <div class="auth-field">
+            <label>Email</label>
+            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "filter-input" } })
+        </div>
+        <div class="auth-field">
+            <label>Пароль</label>
+            @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "filter-input" } })
+        </div>
+        <button type="submit" class="btn-filter">Увійти</button>
+        <p style="margin-top:10px; color:#c0c0c0;">
+            Немає акаунту? @Html.ActionLink("Зареєструватися", "Register", "Account", null, new { style = "color:#c0c0c0;" })
+        </p>
+    </div>
+}

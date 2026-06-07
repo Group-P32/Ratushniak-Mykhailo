@@ -493,3 +493,52 @@ thead th {
     flex-direction: column;
     gap: 6px;
 }
+
+/* ===== ФОРМИ АВТОРИЗАЦІЇ ===== */
+.auth-form {
+    background-color: #16213e;
+    border: 1px solid #c0c0c0;
+    border-radius: 6px;
+    padding: 30px;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.auth-field {
+    margin-bottom: 15px;
+}
+
+    .auth-field label {
+        display: block;
+        color: #c0c0c0;
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .auth-field input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 15px;
+}
+
+.nav-auth-btn {
+    color: #1a1a2e;
+    background-color: #c0c0c0;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .nav-auth-btn:hover {
+        background-color: #ffffff;
+        color: #1a1a2e;
+        text-decoration: none;
+    }

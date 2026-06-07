@@ -18,6 +18,18 @@
             <li>@Html.ActionLink("📂 " + Resources.Resources.Categories, "Index", "Category")</li>
             <li>@Html.ActionLink("💬 Чат", "Index", "Chat")</li>
         </ul>
+        <div class="auth-links">
+            @if (Request.IsAuthenticated)
+            {
+                <span style="color:#c0c0c0; margin-right:10px;">👤 @User.Identity.Name</span>
+                @Html.ActionLink("Вийти", "Logout", "Account", null, new { @class = "lang-switcher a" })
+            }
+            else
+            {
+                @Html.ActionLink("Вхід", "Login", "Account", null, new { @class = "nav-auth-btn" })
+                @Html.ActionLink("Реєстрація", "Register", "Account", null, new { @class = "nav-auth-btn" })
+            }
+        </div>
         <div class="lang-switcher">
             @Html.ActionLink("🇺🇦 UA", "Change", "Language", new { lang = "uk", returnUrl = Request.RawUrl }, new { })
             <span>|</span>
