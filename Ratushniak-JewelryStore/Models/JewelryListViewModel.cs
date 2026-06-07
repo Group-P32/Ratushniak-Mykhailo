@@ -15,5 +15,7 @@ namespace JewelryStore.Models
         public decimal? MinPrice { get; set; }
         // Максимальна ціна
         public decimal? MaxPrice { get; set; }
+        // Інформація про пагінацію
+        public PageInfo PageInfo { get; set; }
     }
 }

@@ -153,3 +153,30 @@ input[type="submit"] {
     font-size: 18px;
     padding: 30px;
 }
+
+/* ===== ПАГІНАЦІЯ ===== */
+.page-btn {
+    display: inline-block;
+    background-color: #16213e;
+    color: #c0c0c0;
+    border: 1px solid #c0c0c0;
+    padding: 6px 12px;
+    margin-right: 4px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+    .page-btn:hover {
+        background-color: #0f3460;
+        color: #ffffff;
+    }
+
+.page-selected {
+    background-color: #c0c0c0;
+    color: #1a1a2e;
+}
+
+    .page-selected:hover {
+        background-color: #ffffff;
+    }

@@ -11,9 +11,11 @@ namespace Ratushniak_JewelryStore.Controllers
     {
         JewelryContext db = new JewelryContext();
 
-        public ActionResult Index(int? categoryId, decimal? minPrice, decimal? maxPrice)
+        public ActionResult Index(int? categoryId, decimal? minPrice,
+            decimal? maxPrice, int page = 1)
         {
-            // Отримуємо всі прикраси з категоріями
+            int pageSize = 3; // кількість прикрас на сторінці
+
             IQueryable<Jewelry> jewelries = db.Jewelries.Include(j => j.Category);
 
             // Фільтр за категорією
@@ -34,18 +36,31 @@ namespace Ratushniak_JewelryStore.Controllers
                 jewelries = jewelries.Where(j => j.Price <= maxPrice);
             }
 
-            // Формуємо список категорій для dropdown
+            // Пагінація
+            int totalItems = jewelries.Count();
+            var jewelriesPerPage = jewelries
+                .OrderBy(j => j.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            // Список категорій
             List<Category> categories = db.Categories.ToList();
             categories.Insert(0, new Category { Name = "Всі категорії", Id = 0 });
 
-            // Формуємо ViewModel
             JewelryListViewModel viewModel = new JewelryListViewModel
             {
-                Jewelries = jewelries.ToList(),
+                Jewelries = jewelriesPerPage,
                 Categories = new SelectList(categories, "Id", "Name"),
                 SelectedCategoryId = categoryId,
                 MinPrice = minPrice,
-                MaxPrice = maxPrice
+                MaxPrice = maxPrice,
+                PageInfo = new PageInfo
+                {
+                    PageNumber = page,
+                    PageSize = pageSize,
+                    TotalItems = totalItems
+                }
             };
 
             return View(viewModel);

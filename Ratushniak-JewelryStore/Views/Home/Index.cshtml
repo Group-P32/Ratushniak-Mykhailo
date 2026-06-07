@@ -1,4 +1,5 @@
 ﻿@model JewelryStore.Models.JewelryListViewModel
+@using Ratushniak_JewelryStore.Helpers
 @{
     ViewBag.Title = "Каталог прикрас";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,12 +18,12 @@
             <td style="border:none; padding-right:16px;">
                 <label style="color:#c0c0c0;">Ціна від (грн):</label><br />
                 <input type="number" name="minPrice" value="@Model.MinPrice"
-                    style="background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px; width:120px;" />
+                       style="background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px; width:120px;" />
             </td>
             <td style="border:none; padding-right:16px;">
                 <label style="color:#c0c0c0;">Ціна до (грн):</label><br />
                 <input type="number" name="maxPrice" value="@Model.MaxPrice"
-                    style="background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px; width:120px;" />
+                       style="background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px; width:120px;" />
             </td>
             <td style="border:none; vertical-align:bottom;">
                 <input type="submit" value="🔍 Фільтрувати" />
@@ -62,3 +63,10 @@
 {
     <p style="color:#c0c0c0; margin-top:16px;">За вказаними критеріями прикрас не знайдено.</p>
 }
+
+<br />
+<div>
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index",
+        new { page = x, categoryId = Model.SelectedCategoryId,
+              minPrice = Model.MinPrice, maxPrice = Model.MaxPrice }))
+</div>
