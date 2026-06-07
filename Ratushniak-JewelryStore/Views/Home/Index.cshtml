@@ -1,28 +1,64 @@
-﻿@{
+﻿@model JewelryStore.Models.JewelryListViewModel
+@{
     ViewBag.Title = "Каталог прикрас";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h3>Каталог прикрас</h3>
 
+<form method="get">
+    <table style="border:none; background:transparent; margin-bottom:16px;">
+        <tr>
+            <td style="border:none; padding-right:16px;">
+                <label style="color:#c0c0c0;">Категорія:</label><br />
+                @Html.DropDownList("categoryId", Model.Categories as SelectList,
+                    new { style = "background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px;" })
+            </td>
+            <td style="border:none; padding-right:16px;">
+                <label style="color:#c0c0c0;">Ціна від (грн):</label><br />
+                <input type="number" name="minPrice" value="@Model.MinPrice"
+                    style="background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px; width:120px;" />
+            </td>
+            <td style="border:none; padding-right:16px;">
+                <label style="color:#c0c0c0;">Ціна до (грн):</label><br />
+                <input type="number" name="maxPrice" value="@Model.MaxPrice"
+                    style="background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px; width:120px;" />
+            </td>
+            <td style="border:none; vertical-align:bottom;">
+                <input type="submit" value="🔍 Фільтрувати" />
+            </td>
+            <td style="border:none; vertical-align:bottom; padding-left:8px;">
+                <input type="button" value="✖ Скинути" onclick="window.location='/Home/Index'" />
+            </td>
+        </tr>
+    </table>
+</form>
+
 <table>
     <tr class="header">
-        <td><p>Назва</p></td>
-        <td><p>Тип</p></td>
-        <td><p>Матеріал</p></td>
-        <td><p>Вага (г)</p></td>
-        <td><p>Ціна (грн)</p></td>
+        <td>Назва</td>
+        <td>Тип</td>
+        <td>Матеріал</td>
+        <td>Вага (г)</td>
+        <td>Ціна (грн)</td>
+        <td>Категорія</td>
         <td></td>
     </tr>
-    @foreach (var j in ViewBag.Jewelries)
+    @foreach (var j in Model.Jewelries)
     {
         <tr>
-            <td><p>@j.Name</p></td>
-            <td><p>@j.Type</p></td>
-            <td><p>@j.Material</p></td>
-            <td><p>@j.Weight</p></td>
-            <td><p>@j.Price</p></td>
-            <td><p><a href="/Home/Buy/@j.Id">Оформити покупку</a></p></td>
+            <td>@j.Name</td>
+            <td>@j.Type</td>
+            <td>@j.Material</td>
+            <td>@j.Weight</td>
+            <td>@j.Price</td>
+            <td>@(j.Category != null ? j.Category.Name : "—")</td>
+            <td><a href="/Home/Buy/@j.Id">Оформити покупку</a></td>
         </tr>
     }
 </table>
+
+@if (!Model.Jewelries.Any())
+{
+    <p style="color:#c0c0c0; margin-top:16px;">За вказаними критеріями прикрас не знайдено.</p>
+}

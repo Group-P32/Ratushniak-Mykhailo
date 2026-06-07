@@ -130,6 +130,22 @@ input[type="submit"] {
     input[type="submit"]:hover {
         background-color: #ffffff;
     }
+    input[type="button"] {
+        width: auto;
+        background-color: #c0c0c0;
+        color: #1a1a2e;
+        border: none;
+        padding: 8px 20px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    input[type="button"]:hover {
+        background-color: #ffffff;
+    }
 
 /* ===== ПОВІДОМЛЕННЯ ===== */
 .success-msg {
