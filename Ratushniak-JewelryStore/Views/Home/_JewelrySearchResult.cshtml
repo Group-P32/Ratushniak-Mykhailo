@@ -1,0 +1,35 @@
+﻿@using JewelryStore.Models
+@model IEnumerable<JewelryStore.Models.Jewelry>
+
+@if (Model != null && Model.Any())
+{
+    <table class="jewelry-table">
+        <thead>
+            <tr>
+                <th>@Resources.Resources.Name</th>
+                <th>@Resources.Resources.Type</th>
+                <th>@Resources.Resources.Material</th>
+                <th>@Resources.Resources.Weight</th>
+                <th>@Resources.Resources.Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Type</td>
+                    <td>@item.Material</td>
+                    <td>@item.Weight г</td>
+                    <td>@item.Price грн</td>
+                    <td>@Html.ActionLink(Resources.Resources.Buy, "Buy", "Home", new { id = item.Id }, new { @class = "btn-buy" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p style="color:#c0c0c0; padding:10px;">Нічого не знайдено.</p>
+}

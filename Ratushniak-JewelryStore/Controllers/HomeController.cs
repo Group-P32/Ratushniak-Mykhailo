@@ -81,5 +81,12 @@ namespace Ratushniak_JewelryStore.Controllers
             db.SaveChanges();
             return "Дякуємо, " + purchase.Person + ", за покупку в магазині «Срібна підкова»!";
         }
+        public ActionResult Search(string query)
+        {
+            var results = db.Jewelries
+                .Where(j => j.Name.Contains(query) || j.Material.Contains(query))
+                .ToList();
+            return PartialView("_JewelrySearchResult", results);
+        }
     }
 }

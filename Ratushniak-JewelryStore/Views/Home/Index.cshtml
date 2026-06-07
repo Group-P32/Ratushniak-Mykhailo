@@ -43,4 +43,37 @@
         }
     </tbody>
 </table>
+<div class="search-panel">
+    <h3>🔍 @Resources.Resources.Name / @Resources.Resources.Material</h3>
+    <input type="text" id="searchQuery" placeholder="Введіть назву або матеріал..." class="filter-input" style="width:300px;" />
+    <button onclick="doSearch()" class="btn-filter">Пошук</button>
+    <div id="searchResults" style="margin-top:15px;"></div>
+</div>
 @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", "Home", new { page = x, categoryId = Model.SelectedCategoryId, minPrice = Model.MinPrice, maxPrice = Model.MaxPrice }))
+@section scripts {
+<script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+    <script>
+        function doSearch() {
+            var query = $('#searchQuery').val();
+            if (query.length < 1) {
+                $('#searchResults').html('');
+                return;
+            }
+            $.ajax({
+                url: '@Url.Action("Search", "Home")',
+                type: 'GET',
+                data: { query: query },
+                success: function (result) {
+                    $('#searchResults').html(result);
+                },
+                error: function () {
+                    $('#searchResults').html('<p style="color:red;">Помилка пошуку.</p>');
+                }
+            });
+        }
+
+        $('#searchQuery').on('keyup', function () {
+            doSearch();
+        });
+    </script>
+}
