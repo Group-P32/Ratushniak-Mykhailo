@@ -1,72 +1,46 @@
-﻿@model JewelryStore.Models.JewelryListViewModel
+﻿@using JewelryStore.Models
 @using Ratushniak_JewelryStore.Helpers
+@model JewelryStore.Models.JewelryListViewModel
 @{
-    ViewBag.Title = "Каталог прикрас";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Resources.Resources.Catalog;
 }
-
-<h3>Каталог прикрас</h3>
-
-<form method="get">
-    <table style="border:none; background:transparent; margin-bottom:16px;">
-        <tr>
-            <td style="border:none; padding-right:16px;">
-                <label style="color:#c0c0c0;">Категорія:</label><br />
-                @Html.DropDownList("categoryId", Model.Categories as SelectList,
-                    new { style = "background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px;" })
-            </td>
-            <td style="border:none; padding-right:16px;">
-                <label style="color:#c0c0c0;">Ціна від (грн):</label><br />
-                <input type="number" name="minPrice" value="@Model.MinPrice"
-                       style="background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px; width:120px;" />
-            </td>
-            <td style="border:none; padding-right:16px;">
-                <label style="color:#c0c0c0;">Ціна до (грн):</label><br />
-                <input type="number" name="maxPrice" value="@Model.MaxPrice"
-                       style="background:#0f3460; color:#e0e0e0; border:1px solid #c0c0c0; padding:5px; width:120px;" />
-            </td>
-            <td style="border:none; vertical-align:bottom;">
-                <input type="submit" value="🔍 Фільтрувати" />
-            </td>
-            <td style="border:none; vertical-align:bottom; padding-left:8px;">
-                <input type="button" value="✖ Скинути" onclick="window.location='/Home/Index'" />
-            </td>
-        </tr>
-    </table>
-</form>
-
-<table>
-    <tr class="header">
-        <td>Назва</td>
-        <td>Тип</td>
-        <td>Матеріал</td>
-        <td>Вага (г)</td>
-        <td>Ціна (грн)</td>
-        <td>Категорія</td>
-        <td></td>
-    </tr>
-    @foreach (var j in Model.Jewelries)
-    {
-        <tr>
-            <td>@j.Name</td>
-            <td>@j.Type</td>
-            <td>@j.Material</td>
-            <td>@j.Weight</td>
-            <td>@j.Price</td>
-            <td>@(j.Category != null ? j.Category.Name : "—")</td>
-            <td><a href="/Home/Buy/@j.Id">Оформити покупку</a></td>
-        </tr>
-    }
-</table>
-
-@if (!Model.Jewelries.Any())
+<h2>@Resources.Resources.Catalog</h2>
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
 {
-    <p style="color:#c0c0c0; margin-top:16px;">За вказаними критеріями прикрас не знайдено.</p>
+    <div class="filter-panel">
+        <label>@Resources.Resources.Category:</label>
+        @Html.DropDownList("categoryId", Model.Categories, Resources.Resources.AllCategories, new { @class = "filter-select" })
+        <label>@Resources.Resources.Price:</label>
+        @Html.TextBox("minPrice", Model.MinPrice, new { placeholder = "від", @class = "filter-input" })
+        —
+        @Html.TextBox("maxPrice", Model.MaxPrice, new { placeholder = "до", @class = "filter-input" })
+        <button type="submit" class="btn-filter">@Resources.Resources.Filter</button>
+        @Html.ActionLink(Resources.Resources.Reset, "Index", "Home", null, new { @class = "btn-reset" })
+    </div>
 }
-
-<br />
-<div>
-    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index",
-        new { page = x, categoryId = Model.SelectedCategoryId,
-              minPrice = Model.MinPrice, maxPrice = Model.MaxPrice }))
-</div>
+<table class="jewelry-table">
+    <thead>
+        <tr>
+            <th>@Resources.Resources.Name</th>
+            <th>@Resources.Resources.Type</th>
+            <th>@Resources.Resources.Material</th>
+            <th>@Resources.Resources.Weight</th>
+            <th>@Resources.Resources.Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Jewelries)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Type</td>
+                <td>@item.Material</td>
+                <td>@item.Weight г</td>
+                <td>@item.Price грн</td>
+                <td>@Html.ActionLink(Resources.Resources.Buy, "Buy", "Home", new { id = item.Id }, new { @class = "btn-buy" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PageLinks(Model.PageInfo, x => Url.Action("Index", "Home", new { page = x, categoryId = Model.SelectedCategoryId, minPrice = Model.MinPrice, maxPrice = Model.MaxPrice }))

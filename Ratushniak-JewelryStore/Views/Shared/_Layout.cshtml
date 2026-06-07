@@ -2,22 +2,29 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title — Срібна підкова</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Resources.Resources.ShopName</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <nav>
-        <ul class="menu">
-            <li>@Html.ActionLink("🏠 Головна", "Index", "Home")</li>
-            <li>@Html.ActionLink("💎 Керування прикрасами", "Index", "Jewelries")</li>
-            <li>@Html.ActionLink("📂 Категорії", "Index", "Category")</li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <div class="shop-title">💎 @Resources.Resources.ShopName</div>
+    </header>
 
-    <div class="shop-title">
-        Ювелірний магазин «Срібна підкова»
-    </div>
+    <nav class="site-nav">
+        <ul>
+            <li>@Html.ActionLink("🏠 " + Resources.Resources.Home, "Index", "Home")</li>
+            <li>@Html.ActionLink("💎 " + Resources.Resources.Catalog, "Index", "Jewelries")</li>
+            <li>@Html.ActionLink("📂 " + Resources.Resources.Categories, "Index", "Category")</li>
+        </ul>
+        <div class="lang-switcher">
+            @Html.ActionLink("🇺🇦 UA", "Change", "Language", new { lang = "uk", returnUrl = Request.RawUrl }, new { })
+            <span>|</span>
+            @Html.ActionLink("🇬🇧 EN", "Change", "Language", new { lang = "en", returnUrl = Request.RawUrl }, new { })
+            <span>|</span>
+            @Html.ActionLink("🇫🇷 FR", "Change", "Language", new { lang = "fr", returnUrl = Request.RawUrl }, new { })
+        </div>
+    </nav>
 
     <div class="content-wrapper">
         @RenderBody()
@@ -26,27 +33,24 @@
     <footer class="site-footer">
         <div class="footer-columns">
             <div class="footer-col">
-                <h4>Про магазин</h4>
-                <p>«Срібна підкова» — ексклюзивні прикраси з платини, титану та бронзи.</p>
+                <h4>@Resources.Resources.AboutShop</h4>
+                <p>@Resources.Resources.ShopName</p>
             </div>
             <div class="footer-col">
-                <h4>Контакти</h4>
-                <p>📍 селище Гусятин, вулиця Стуса 2</p>
-                <p>📞 +38 (044) 123-45-67</p>
-                <p>✉️ info@silvershoe.ua</p>
+                <h4>@Resources.Resources.Contacts</h4>
+                <p>Гусятин, вул. Стуса 2</p>
             </div>
             <div class="footer-col">
-                <h4>Години роботи</h4>
+                <h4>@Resources.Resources.WorkHours</h4>
                 <p>Пн–Пт: 9:00–18:00</p>
-                <p>Сб: 10:00–16:00</p>
-                <p>Нд: вихідний</p>
             </div>
         </div>
         <div class="footer-bottom">
-            © @DateTime.Now.Year — Ювелірний магазин «Срібна підкова». Всі права захищено.
+            © @DateTime.Now.Year — @Resources.Resources.Rights
         </div>
     </footer>
 
+    <script src="@Url.Content("~/Scripts/jquery-3.4.1.min.js")"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

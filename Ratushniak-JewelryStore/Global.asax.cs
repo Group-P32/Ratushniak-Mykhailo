@@ -13,6 +13,7 @@ namespace Ratushniak_JewelryStore
         {
             Database.SetInitializer(new JewelryStore.Models.JewelryDbInitializer());
             AreaRegistration.RegisterAllAreas();
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters); // ← додати
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }

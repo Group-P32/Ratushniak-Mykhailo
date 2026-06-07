@@ -71,3 +71,11 @@ C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Ratushn
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\Ratushniak-JewelryStore.pdb
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak-JewelryStore.dll
 C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak-JewelryStore.pdb
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak_JewelryStore.Resources.Resources.resources
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak_JewelryStore.Resources.Resources.fr.resources
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak_JewelryStore.Resources.Resources.en.resources
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\Ratushniak-JewelryStore.csproj.GenerateResource.cache
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\fr\Ratushniak-JewelryStore.resources.dll
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\bin\en\Ratushniak-JewelryStore.resources.dll
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\fr\Ratushniak-JewelryStore.resources.dll
+C:\Users\Radik\source\repos\Ratushniak_Store\Ratushniak-JewelryStore\obj\Debug\en\Ratushniak-JewelryStore.resources.dll
