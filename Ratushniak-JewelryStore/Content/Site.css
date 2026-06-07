@@ -413,3 +413,83 @@ thead th {
         color: #1a1a2e;
         text-decoration: none;
     }
+
+/* ===== ЧАТ ===== */
+.chat-login {
+    background-color: #16213e;
+    border: 1px solid #c0c0c0;
+    border-radius: 6px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+    .chat-login p {
+        color: #c0c0c0;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+.chat-wrapper {
+    display: flex;
+    gap: 15px;
+    height: 450px;
+    margin-bottom: 10px;
+}
+
+.chat-users {
+    width: 180px;
+    background-color: #16213e;
+    border: 1px solid #2a2a4a;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+    .chat-users p {
+        color: #c0c0c0;
+        margin: 5px 0;
+        font-size: 13px;
+    }
+
+.chat-messages {
+    flex: 1;
+    background-color: #0f1b35;
+    border: 1px solid #2a2a4a;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+    .chat-messages p {
+        margin: 6px 0;
+        border-bottom: 1px solid #1a2a4a;
+        padding-bottom: 6px;
+        font-size: 13px;
+    }
+
+.chat-input-form {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.chat-textarea {
+    flex: 1;
+    background-color: #0f3460;
+    border: 1px solid #c0c0c0;
+    color: #e0e0e0;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    resize: none;
+}
+
+.chat-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}

@@ -1,0 +1,30 @@
+﻿@model JewelryStore.Models.ChatModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "💬 Чат";
+}
+
+<div id="Username" style="color:#c0c0c0; font-size:13px; padding:5px 0;">
+    👤 Ви в чаті як: <strong id="UsernameText"></strong>
+</div>
+<div id="LastRefresh" style="text-align:right; color:#888; font-size:12px; margin-bottom:5px;"></div>
+
+<div id="container">
+    <div id="loginBlock" class="chat-login">
+        <p>Введіть своє ім'я:</p>
+        <input type="text" id="txtUserName" class="filter-input" placeholder="Ваш нікнейм..." />
+        <button id="btnLogin" class="btn-filter">Увійти</button>
+    </div>
+</div>
+
+<div id="Error" style="color:red; margin:10px 0;"></div>
+
+@Ajax.ActionLink("Login", "Index", "Chat", new { user = "" },
+    new AjaxOptions { UpdateTargetId = "container", OnFailure = "LoginOnFailure", OnSuccess = "LoginOnSuccess" },
+    new { @id = "LoginButton", @style = "visibility:hidden;" })
+
+@section scripts {
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/chat.js")"></script>
+}
