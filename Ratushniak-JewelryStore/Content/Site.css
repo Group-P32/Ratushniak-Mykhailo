@@ -180,3 +180,49 @@ input[type="submit"] {
     .page-selected:hover {
         background-color: #ffffff;
     }
+
+/* ===== CONTENT ===== */
+.content-wrapper {
+    padding: 0 30px 30px 30px;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background-color: #16213e;
+    border-top: 2px solid #c0c0c0;
+    margin-top: 40px;
+    padding: 30px;
+    color: #c0c0c0;
+    font-size: 13px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-col {
+    flex: 1;
+    padding-right: 30px;
+}
+
+    .footer-col h4 {
+        color: #ffffff;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    .footer-col p {
+        margin: 4px 0;
+        color: #c0c0c0;
+    }
+
+.footer-bottom {
+    border-top: 1px solid #2a2a4a;
+    padding-top: 14px;
+    text-align: center;
+    color: #888;
+}

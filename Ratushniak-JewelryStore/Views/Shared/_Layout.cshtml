@@ -22,5 +22,31 @@
     <div class="content-wrapper">
         @RenderBody()
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h4>Про магазин</h4>
+                <p>«Срібна підкова» — ексклюзивні прикраси з платини, титану та бронзи.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Контакти</h4>
+                <p>📍 селище Гусятин, вулиця Стуса 2</p>
+                <p>📞 +38 (044) 123-45-67</p>
+                <p>✉️ info@silvershoe.ua</p>
+            </div>
+            <div class="footer-col">
+                <h4>Години роботи</h4>
+                <p>Пн–Пт: 9:00–18:00</p>
+                <p>Сб: 10:00–16:00</p>
+                <p>Нд: вихідний</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © @DateTime.Now.Year — Ювелірний магазин «Срібна підкова». Всі права захищено.
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
